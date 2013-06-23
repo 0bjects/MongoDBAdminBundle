@@ -1,0 +1,31 @@
+{% extends 'ObjectsMongoDBAdminBundle:General:base_admin.html.twig' %}
+
+{% block title %}{% trans %}Change Site Configurations{% endtrans %}{% endblock %}
+
+{% block body %}
+{% for formError in form.vars.errors %}
+    <div class="alert alert-error">
+        {{ formError.message }}
+    </div>
+{% endfor %}
+{{ form_start(form, {'attr': {'class': 'form-horizontal'} }) }}
+    <legend>{% trans %}Change Site Configurations{% endtrans %}</legend>
+    <div class="control-group{% if form.contact_email_to.vars.errors | length > 0 %} error{% endif %}">
+        <label class="control-label">Contact Email to:</label>
+        <div class="controls">
+            {{ form_widget(form.contact_email_to) }}
+            <span class="help-inline"></span>
+            {% for elementError in form.contact_email_to.vars.errors %}
+            <div class="alert alert-error">
+                {{ elementError.message }}<a href="#" class="close" data-dismiss="alert">&times;</a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="form-actions">
+        <button type="submit" class="btn btn-primary">{% trans %}Save changes{% endtrans %}</button>
+        <button type="reset" class="btn">{% trans %}Reset{% endtrans %}</button>
+    </div>
+{{ form_end(form) }}
+{% endblock %}
