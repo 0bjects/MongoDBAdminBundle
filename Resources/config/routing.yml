@@ -1,1 +1,7 @@
+admin_site_pages:
+    path:  /site/pages
+    defaults: { _controller: ObjectsMongoDBAdminBundle:Admin:sitePages }
 
+admin_site_blocks:
+    path:  /site/blocks
+    defaults: { _controller: ObjectsMongoDBAdminBundle:Admin:siteBlocks }

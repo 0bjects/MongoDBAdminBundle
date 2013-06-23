@@ -20,7 +20,7 @@ function removeImage(anchor) {
         success: function() {
             $(anchor).parent().find('img').remove();
             $(anchor).remove();
-        },
+        }
     });
 }
 $(document).ready(function() {
@@ -62,6 +62,4 @@ $(document).ready(function() {
     $('.chzn-select-deselect').livequery(function() {
         $(this).chosen({allow_single_deselect: true});
     });
-
-    $(".chzn-select").chosen();
 });

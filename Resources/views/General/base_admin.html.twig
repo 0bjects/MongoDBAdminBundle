@@ -27,6 +27,8 @@
                     <div class="nav-collapse collapse">
                         <ul class="nav">
                             <li><a href="{{ path('sonata_admin_dashboard') }}">{% trans %}Dashboard{% endtrans %}</a></li>
+                            <li><a href="{{ path('admin_site_blocks') }}">{% trans %}Static Blocks{% endtrans %}</a></li>
+                            <li><a href="{{ path('admin_site_pages') }}">{% trans %}Static Pages{% endtrans %}</a></li>
                             <li><a href="{{ path('logout') }}">{% trans %}Logout{% endtrans %}</a></li>
                         </ul>
                     </div>
@@ -36,21 +38,21 @@
         <div class="container-fluid" style="margin-top: 60px;">
             {% for flashMessage in app.session.flashbag.get('notice') %}
             <div class="alert alert-info">
-                <p>{{ flashMessage | trans }}.</p>
+                {{ flashMessage | trans }}.
             </div>
             {% endfor %}
             {% for flashMessage in app.session.flashbag.get('success') %}
             <div class="alert alert-success">
-                <p>{{ flashMessage | trans }}.</p>
+                {{ flashMessage | trans }}.
             </div>
             {% endfor %}
             {% for flashMessage in app.session.flashbag.get('error') %}
             <div class="alert alert-error">
-                <p>{{ flashMessage | trans }}.</p>
+                {{ flashMessage | trans }}.
             </div>
             {% endfor %}
             {% block body %}{% endblock %}
-            <div class="pull-right clearfix" style="margin-bottom: 10px;">
+            <div class="pull-right" style="margin-bottom: 10px;clear: both;">
                 <span class="label">
                     {% trans %}Developed by{% endtrans %} <a style="color: black" target="_blank" rel="noreferrer" href="http://www.objects.ws">Objects</a>
                 </span>
