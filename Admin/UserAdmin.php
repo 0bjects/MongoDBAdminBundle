@@ -105,7 +105,7 @@ class UserAdmin extends Admin {
             'onchange' => 'readURL(this);'
         );
         if ($this->getSubject() && $this->getSubject()->getId() && $this->getSubject()->getImage()) {
-            $imageAttributes['data-image-url'] = $this->getSubject()->getSmallImageUrl(60, 60);
+            $imageAttributes['data-image-url'] = $this->getRequest()->getBasePath() . '/' . $this->getSubject()->getSmallImageUrl(60, 60);
             //$imageAttributes['data-image-remove-url'] = $this->getConfigurationPool()->getContainer()->get('router')->generate('admin_remove_customer_image', array('customerId' => $this->getSubject()->getId()));
         }
         $formMapper

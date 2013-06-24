@@ -3,10 +3,10 @@
 {% block field %}
     {% if object.getSWFFileWebPath() %}
     <object>
-        <param name="movie" value="{{ object.getSWFFileWebPath() }}"/>
+        <param name="movie" value="{{ asset(object.getSWFFileWebPath()) }}"/>
         <param name="allowFullScreen" value="true"/>
         <param name="allowscriptaccess" value="always"/>
-        <embed src="{{ object.getSWFFileWebPath() }}" type="application/x-shockwave-flash" width="100%" allowscriptaccess="always" allowfullscreen="true" />
+        <embed src="{{ asset(object.getSWFFileWebPath()) }}" type="application/x-shockwave-flash" width="100%" allowscriptaccess="always" allowfullscreen="true" />
     </object>
     {% else %}
     NULL

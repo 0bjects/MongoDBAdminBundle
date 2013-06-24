@@ -2,7 +2,7 @@
 
 {% block field %}
     {% if object.getSWFFileWebPath() %}
-    <a href="{{ object.getSWFFileWebPath() }}" target="_blank" title="{{ object }}">{{ object.fileName }}</a>
+    <a href="{{ asset(object.getSWFFileWebPath()) }}" target="_blank" title="{{ object }}">{{ object.fileName }}</a>
     {% else %}
     NULL
     {% endif %}

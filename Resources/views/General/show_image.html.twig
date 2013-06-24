@@ -2,6 +2,6 @@
 
 {% block field %}
     {% if object.getWebPath() %}
-        <img src="{{ object.getWebPath() }}" title="{{ object }}" alt="{{ object }}" />
+        <img src="{{ asset(object.getWebPath()) }}" title="{{ object }}" alt="{{ object }}" />
     {% endif %}
 {% endblock %}
