@@ -6,6 +6,10 @@ admin_site_blocks:
     path:  /site/blocks
     defaults: { _controller: ObjectsMongoDBAdminBundle:Admin:siteBlocks }
 
+admin_site_emails:
+    path:  /site/emails
+    defaults: { _controller: ObjectsMongoDBAdminBundle:Admin:siteEmails }
+
 admin_site_configurations:
     path:  /site/configurations
     defaults: { _controller: ObjectsMongoDBAdminBundle:Admin:siteConfigurations }

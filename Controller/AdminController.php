@@ -58,6 +58,29 @@ class AdminController extends Controller {
         ));
     }
 
+    public function siteEmailsAction() {
+        $contactUsFilePath = __DIR__ . '/../../../../app/Resources/views/Emails/contact_us.html.twig';
+        $data = array();
+        $data['contactUsText'] = file_get_contents($contactUsFilePath);
+        $form = $this->createFormBuilder($data)
+                ->add('contactUsText', 'textarea', array('constraints' => new NotBlank(), 'required' => false, 'attr' => array('class' => 'ckeditor', 'style' => 'width:100%;height:300px')))
+                ->getForm();
+        $request = $this->getRequest();
+        if ($request->getMethod() == 'POST') {
+            $form->handleRequest($request);
+            if ($form->isValid()) {
+                $data = $form->getData();
+                file_put_contents($contactUsFilePath, $data['contactUsText']);
+                $request->getSession()->getFlashBag()->add('success', 'Saved Successfully');
+                exec(PHP_BINDIR . '/php-cli ' . __DIR__ . '/../../../../app/console cache:clear -e prod');
+                exec(PHP_BINDIR . '/php-cli ' . __DIR__ . '/../../../../app/console cache:warmup --no-debug -e prod');
+            }
+        }
+        return $this->render('ObjectsMongoDBAdminBundle:Admin:siteEmails.html.twig', array(
+                    'form' => $form->createView()
+        ));
+    }
+
     public function siteConfigurationsAction() {
         $container = $this->container;
         $data = array();
