@@ -16,9 +16,9 @@
             {{ form_widget(form.contact_email_to) }}
             <span class="help-inline"></span>
             {% for elementError in form.contact_email_to.vars.errors %}
-            <div class="alert alert-error">
-                {{ elementError.message }}<a href="#" class="close" data-dismiss="alert">&times;</a>
-            </div>
+            <span class="help-block">
+                {{ elementError.message }}
+            </span>
             {% endfor %}
         </div>
     </div>
