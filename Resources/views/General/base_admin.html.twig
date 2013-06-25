@@ -38,6 +38,11 @@
             </div>
         </div>
         <div class="container-fluid" style="margin-top: 60px;">
+            <ul class="breadcrumb">
+                <li><a href="{{ path('sonata_admin_dashboard') }}">{% trans %}Home{% endtrans %}</a> <span class="divider">/</span></li>
+                {% block breadcrumb %}
+                {% endblock %}
+            </ul>
             {% for flashMessage in app.session.flashbag.get('notice') %}
             <div class="alert alert-info">
                 {{ flashMessage | trans }}.<a href="#" class="close" data-dismiss="alert">&times;</a>

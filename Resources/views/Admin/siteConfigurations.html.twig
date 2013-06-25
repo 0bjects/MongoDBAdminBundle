@@ -1,6 +1,8 @@
 {% extends 'ObjectsMongoDBAdminBundle:General:base_admin.html.twig' %}
 
-{% block title %}{% trans %}Change Site Configurations{% endtrans %}{% endblock %}
+{% block title %}{% trans %}Site Configurations{% endtrans %}{% endblock %}
+
+{% block breadcrumb %}<li class="active">{% trans %}Site Configurations{% endtrans %}</li>{% endblock %}
 
 {% block body %}
 {% for formError in form.vars.errors %}
@@ -9,7 +11,7 @@
     </div>
 {% endfor %}
 {{ form_start(form, {'attr': {'class': 'form-horizontal'} }) }}
-    <legend>{% trans %}Change Site Configurations{% endtrans %}</legend>
+    <legend>{% trans %}Site Configurations{% endtrans %}</legend>
     <div class="control-group{% if form.contact_email_to.vars.errors | length > 0 %} error{% endif %}">
         <label class="control-label">Contact Email to:</label>
         <div class="controls">
