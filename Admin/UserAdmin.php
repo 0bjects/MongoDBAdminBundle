@@ -31,7 +31,6 @@ class UserAdmin extends Admin {
 
     /**
      * this function configure the list action fields
-     * @author Mahmoud
      * @param ListMapper $listMapper
      */
     public function configureListFields(ListMapper $listMapper) {
@@ -58,7 +57,6 @@ class UserAdmin extends Admin {
 
     /**
      * this function configure the show action fields
-     * @author Mahmoud
      * @param ShowMapper $showMapper
      */
     public function configureShowField(ShowMapper $showMapper) {
@@ -78,8 +76,6 @@ class UserAdmin extends Admin {
 
     /**
      * this function configure the list action filters fields
-     *
-     * @author Mahmoud
      * @param DatagridMapper $datagridMapper
      */
     public function configureDatagridFilters(DatagridMapper $datagridMapper) {
@@ -97,7 +93,6 @@ class UserAdmin extends Admin {
 
     /**
      * this function configure the new, edit form fields
-     * @author Mahmoud
      * @param FormMapper $formMapper
      */
     public function configureFormFields(FormMapper $formMapper) {
@@ -154,7 +149,7 @@ class UserAdmin extends Admin {
     }
 
     /**
-     * @param \Objects\UserBundle\Entity\User $user
+     * @param Objects\MongoDBUserBundle\Document\User $user
      */
     public function prePersist($user) {
         $user->setRoles(array('ROLE_USER'));
