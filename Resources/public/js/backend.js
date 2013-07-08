@@ -33,6 +33,7 @@ $(document).ready(function() {
     });
     $('input[data-class="datetime"]').livequery(function() {
         var self = $(this);
+        self.prop('type', 'text');
         self.datetimepicker({
             changeMonth: true,
             changeYear: true,
@@ -47,7 +48,9 @@ $(document).ready(function() {
     });
     $('input[data-class="date"]').livequery(function() {
         var self = $(this);
+        self.prop('type','text');
         self.datepicker({
+            showButtonPanel: true,
             changeMonth: true,
             changeYear: true,
             dateFormat: 'yy-mm-dd'
