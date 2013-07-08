@@ -40,7 +40,8 @@ $(document).ready(function() {
             hourGrid: 4,
             minuteGrid: 10,
             timeFormat: 'hh:mm',
-            dateFormat: 'yy-mm-dd'
+            dateFormat: 'yy-mm-dd',
+            constrainInput: true
         });
         self.parent().addClass('input-append');
         self.parent().css('display', 'block');
@@ -53,7 +54,8 @@ $(document).ready(function() {
             showButtonPanel: true,
             changeMonth: true,
             changeYear: true,
-            dateFormat: 'yy-mm-dd'
+            dateFormat: 'yy-mm-dd',
+            constrainInput: true
         });
         self.parent().addClass('input-append');
         self.parent().css('display', 'block');
